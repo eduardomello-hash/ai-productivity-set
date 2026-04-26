@@ -54,6 +54,9 @@ Notes:
 [Anything not captured above]
 ```
 
+**Output:**
+Save your review to `[agreed output directory]/code-review-[feature]-[date].md`. Do not leave output only in the chat — it must be saved as a file in the repo. Confirm the file path when done.
+
 **Rules:**
 - Do NOT fix anything — report only
 - Read actual code, not just the diff — context around changes matters

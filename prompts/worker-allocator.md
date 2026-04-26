@@ -63,6 +63,9 @@ You are a task planner for a code implementation project. Your job is to read th
 ...
 ```
 
+**Output:**
+Save your full allocation output (all worker prompts) to `[agreed output directory]/worker-allocation-[feature]-[date].md`. Do not leave output only in the chat — it must be saved as a file in the repo. Confirm the file path when done.
+
 **Rules:**
 - Each prompt must be fully self-contained — the worker has no context from this conversation
 - Include branch name and commit convention in every prompt:
