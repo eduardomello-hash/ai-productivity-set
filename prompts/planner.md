@@ -7,9 +7,9 @@ Use this to ask an agent to write a detailed implementation plan. Fill in the br
 You are writing a detailed implementation plan for [feature name]. This will be reviewed before any coding starts, so it must be precise and complete.
 
 **Files to read:**
-- `[main codebase file]` — read it in full
+- `[main codebase files]` — read in full
 - `[context brief file]` — the feature spec and requirements
-- `[README or docs file]` — system documentation for context
+- `[README.md]` — system documentation for context
 - `[existing plan file, if any]` — use as reference for format and level of detail
 
 **Your task:**
@@ -28,10 +28,17 @@ Each step must include:
 [Add any feature-specific constraints, design decisions, or guardrails here]
 
 **Output:**
-Write the plan to `[agreed output directory]/plan-[feature].md`. Do not leave output only in the chat — it must be saved as a file in the repo. Confirm the file path when done.
+Write the plan to `context_briefs_and_plans/plan-[feature].md`. Do not leave output only in the chat — it must be saved as a file in the repo. Confirm the file path when done.
 
 **Plan format:**
 - Numbered steps
 - Risk assessment table at the end (step, risk level, reason)
 - Implementation order with dependency notes (which steps must be sequential, which can be parallel)
 - Steps clearly separated so each can be handed to a separate worker chat
+- Branch instructions: workers create `feature/[name]` from `main`
+- Commit convention: `Co-Authored-By: Claude <noreply@anthropic.com>` trailer on every commit
+
+**Rules:**
+- Do not write any code — plan only
+- Do not leave implementation decisions vague — resolve them in the plan
+- If something is ambiguous, flag it as an open question at the end rather than guessing

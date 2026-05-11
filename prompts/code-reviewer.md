@@ -10,7 +10,7 @@ You are doing a final review of `[feature branch]` before it merges to `main`.
 
 **Files to read:**
 - Run `git diff main...[feature branch]` — read the full diff
-- `[main codebase file]` — read in full after the diff
+- `[main codebase files]` — read in full after the diff
 - `[plan file]` — the implementation spec (to verify each step was done correctly)
 - `[prior scrutiny/review outputs, if any]` — to check previously flagged issues were addressed
 - `[test file]` — verify tests exist and cover the right cases
@@ -24,9 +24,10 @@ For each step in the plan:
 4. Flag any deviation from the plan, even if the deviation looks intentional
 
 Additionally:
-- Check for any obvious bugs introduced (null handling, type errors, silent failures)
+- Check for obvious bugs introduced: null handling, type errors, silent failures
 - Check that "what NOT to touch" sections were respected
-- Verify the commit history is clean (one commit per worker, descriptive messages)
+- Verify commit history: one commit per worker, descriptive messages, `Co-Authored-By` trailer present
+- Run `pytest test_pricing.py -q` — report full output including any warnings
 
 **Output format:**
 
@@ -39,8 +40,8 @@ Additionally:
 | Step 1 | PASS/FAIL | ... |
 ...
 
-### Validation results
-[Output of any validation snippets run]
+### Test results
+[Full pytest output — do not truncate]
 
 ### Findings
 [Any issues found, with file:line references]
@@ -55,10 +56,11 @@ Notes:
 ```
 
 **Output:**
-Save your review to `[agreed output directory]/code-review-[feature]-[date].md`. Do not leave output only in the chat — it must be saved as a file in the repo. Confirm the file path when done.
+Save your review to `ais-auditing_and_reviews/[feature]-final-review.md`. Do not leave output only in the chat. Confirm the file path when done.
 
 **Rules:**
 - Do NOT fix anything — report only
 - Read actual code, not just the diff — context around changes matters
 - If something looks different from the plan but correct, flag it and explain why it might be intentional
 - Be specific: file, line number, what's wrong
+- A PASS verdict means the branch is ready to merge — be honest, don't approve if uncertain

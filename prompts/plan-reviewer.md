@@ -8,14 +8,14 @@ You are scrutinising an implementation plan before any coding starts. Your job i
 
 **Files to read:**
 - `[plan file]` — the plan under review
-- `[main codebase file]` — read the specific sections the plan references, plus surrounding logic that could be affected
+- `[main codebase files]` — read the specific sections the plan references, plus surrounding logic that could be affected
 - `[any other files the plan references]`
 
 **The spec the plan must satisfy:**
 [Paste the key requirements and guardrails here — be explicit]
 
 **For each finding, classify severity:**
-- **High** — would cause incorrect output, data loss, or silent failures in production
+- **High** — would cause incorrect output, wrong dispute amounts, data loss, or silent failures in production
 - **Medium** — real gap but not immediately dangerous
 - **Low** — minor, style, or nice-to-have
 
@@ -37,10 +37,11 @@ APPROVE / APPROVE WITH FIXES / REVISE BEFORE CODING
 ```
 
 **Output:**
-Save your verdict to `[agreed output directory]/review-[plan name]-[date].md`. Do not leave output only in the chat — it must be saved as a file in the repo. Confirm the file path when done.
+Save your verdict to `ais-auditing_and_reviews/review-[plan name]-[date].md`. Do not leave output only in the chat. Confirm the file path when done.
 
 **Rules:**
-- Read the actual code lines the plan references — don't trust the plan's paraphrasing
-- If the plan handles something correctly, don't flag it
-- Be direct. "The plan is wrong because X" not "the plan could potentially consider..."
+- Read the actual code lines the plan references — do NOT trust the plan's paraphrasing
+- If the plan handles something correctly, do not flag it
+- Be direct: "The plan is wrong because X" — not "the plan could potentially consider..."
 - Do NOT rewrite the plan or propose new implementations
+- Do NOT fix anything — report only
