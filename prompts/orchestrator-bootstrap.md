@@ -84,3 +84,16 @@ All templates live in `ai-productivity-set/prompts/`. For every task, pull the r
 **Repo:** [path or URL]
 
 **Read this file to get up to speed:** `context_briefs_and_plans/context_brief-architect_handoff.md`
+
+## User Preferences
+
+- Eduardo is technically capable — understands the full pipeline and languages envolved.
+- Prefers terse communication, no trailing summaries.
+- Wants the architect to stay lean on context — delegate all heavy work to agents.
+- Unlimited Codex quota — use Codex for bulk work, Claude for orchestration.
+- Always use forward slashes in file paths (Windows + TOML compatibility).
+- Commits: descriptive messages.
+- Feature work on feature branches, merge to main only after review PASS.
+- Check `git status` before any merge — handle dirty worktree first.
+- Review outputs saved to `ais-auditing_and_reviews/`.
+- Plans saved to `context_briefs_and_plans/`.
