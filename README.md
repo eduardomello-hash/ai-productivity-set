@@ -90,9 +90,35 @@ Plans, reviews, allocations, handoffs — all saved as `.md` files in the repo. 
 
 ---
 
-## Agent Prompts
+## Installed Subagents (Claude Code)
 
-See [`prompts/`](prompts/) for ready-to-paste templates:
+The roles above also ship as **real Claude Code subagents** in [`.claude/agents/`](.claude/agents/), installed at the user level (`~/.claude/agents/`) so they work in **every** repo you open. They are repo-agnostic — each discovers the project's test command, plans/reviews directories, and conventions at runtime.
+
+Manage them with the `/agents` command. Invoke one by asking for it by name ("use the **planner** agent to…") or let Claude delegate automatically based on the task.
+
+| Agent | Role | Writes code? |
+|-------|------|:---:|
+| `explorer` | Read-only codebase research — answers questions, locates code, maps structure | no |
+| `planner` | Writes a detailed, review-ready implementation plan | no |
+| `plan-reviewer` | Scrutinises a plan before any coding (High/Medium/Low + verdict) | no |
+| `worker-allocator` | Splits an approved plan into batched, self-contained worker tasks | no |
+| `implementer` | Executes specific plan steps in scope, runs tests, commits | **yes** |
+| `fixer` | Applies targeted, minimal fixes for review findings / known bugs | **yes** |
+| `debugger` | Root-causes a bug or failing test, proposes the minimal fix | no (diagnoses) |
+| `code-reviewer` | Final pre-merge review of a feature branch vs its plan | no |
+
+**The orchestrator is your main session, not a subagent.** Copy [`orchestrator.CLAUDE.md`](orchestrator.CLAUDE.md) into a project's `CLAUDE.md` (or your global `~/.claude/CLAUDE.md`) to make the session you type into behave as the architect that delegates to these agents.
+
+**Editing an agent:** the versioned source is in this repo's [`.claude/agents/`](.claude/agents/). After changing one, re-install with:
+```
+cp ".claude/agents/"*.md ~/.claude/agents/
+```
+
+---
+
+## Agent Prompts (paste-into-any-chat templates)
+
+If you're not using Claude Code subagents (e.g. Codex or a plain chat), [`prompts/`](prompts/) holds the same roles as ready-to-paste, fill-in-the-brackets templates:
 
 | File | Role |
 |------|------|

@@ -6,28 +6,28 @@ Base template. In practice, use the output from the worker-allocator — it prod
 
 You are implementing [steps X-Y] of [feature name] in [repo path].
 
-**Branch:** `[feature branch]` — [create from main / continue from previous worker, pull first]
+**Branch:** `[feature branch]` — [create from the main branch / continue from previous worker, pull first]
 
 **Before starting:**
 - Run `git status` to confirm the worktree is clean
 - If continuing from a previous worker, pull the latest from the branch first
 
 **Files to read before starting:**
-- `[main codebase files]` — read in full / read lines X-Y
+- `[main source files]` — read in full / read lines X-Y
 - `[plan file]` — read steps X-Y only
 - `[any other files]`
 
 **What to implement:**
 
 [Paste the relevant plan steps here verbatim, including:
-- Exact line numbers in the codebase
+- Exact line numbers in the code
 - Before/after code snippets
 - What NOT to touch
 - Edge cases to handle]
 
 **Validation — do this before committing:**
 [Paste the validation steps from the plan here]
-- Run `pytest test_pricing.py -q` — all tests must pass before committing
+- Run the project's test command (e.g. `pytest`, `npm test`, `cargo test` — whatever this repo uses) — all tests must pass before committing
 
 **When done:**
 - Stage only the files you modified
@@ -38,13 +38,13 @@ You are implementing [steps X-Y] of [feature name] in [repo path].
   Co-Authored-By: Claude <noreply@anthropic.com>
   ```
 - Push to remote
-- Run `git status` to confirm clean worktree
-- Report: commit hash, files changed, full pytest output
+- Run `git status` to confirm a clean worktree
+- Report: commit hash, files changed, full test output
 
 **Rules:**
 - Do not modify any code outside the scope of these steps
 - Do not refactor, rename, or clean up surrounding code unless the plan explicitly says to
 - Do not commit after each step — one commit covering all your steps
-- Do not merge to `main` — leave that for after the review passes
+- Do not merge to the main branch — leave that for after the review passes
 - If you hit an ambiguity not covered by the plan, stop and report it rather than guessing
-- Use forward slashes in all file paths (TOML compatibility)
+- Use forward slashes in all file paths (cross-platform and config-file safety)

@@ -8,15 +8,15 @@ You are scrutinising an implementation plan before any coding starts. Your job i
 
 **Files to read:**
 - `[plan file]` — the plan under review
-- `[main codebase files]` — read the specific sections the plan references, plus surrounding logic that could be affected
+- `[main source files]` — read the specific sections the plan references, plus surrounding logic that could be affected
 - `[any other files the plan references]`
 
 **The spec the plan must satisfy:**
 [Paste the key requirements and guardrails here — be explicit]
 
 **For each finding, classify severity:**
-- **High** — would cause incorrect output, wrong dispute amounts, data loss, or silent failures in production
-- **Medium** — real gap but not immediately dangerous
+- **High** — would cause incorrect output, wrong computed values, data loss, or silent failures in production
+- **Medium** — a real gap but not immediately dangerous
 - **Low** — minor, style, or nice-to-have
 
 **Output format:**
@@ -37,7 +37,7 @@ APPROVE / APPROVE WITH FIXES / REVISE BEFORE CODING
 ```
 
 **Output:**
-Save your verdict to `ais-auditing_and_reviews/review-[plan name]-[date].md`. Do not leave output only in the chat. Confirm the file path when done.
+Save your verdict to the project's reviews directory (default convention: `ai_auditing_and_reviews/review-[plan name]-[date].md`). Do not leave output only in the chat. Confirm the file path when done.
 
 **Rules:**
 - Read the actual code lines the plan references — do NOT trust the plan's paraphrasing

@@ -7,10 +7,10 @@ Use this to ask an agent to write a detailed implementation plan. Fill in the br
 You are writing a detailed implementation plan for [feature name]. This will be reviewed before any coding starts, so it must be precise and complete.
 
 **Files to read:**
-- `[main codebase files]` — read in full
-- `[context brief file]` — the feature spec and requirements
-- `[README.md]` — system documentation for context
-- `[existing plan file, if any]` — use as reference for format and level of detail
+- `[main source files the change touches]` — read in full
+- `[context brief / spec file]` — the feature requirements
+- `[README or architecture docs]` — for system context
+- `[an existing plan file, if any]` — use as reference for format and level of detail
 
 **Your task:**
 
@@ -28,14 +28,14 @@ Each step must include:
 [Add any feature-specific constraints, design decisions, or guardrails here]
 
 **Output:**
-Write the plan to `context_briefs_and_plans/plan-[feature].md`. Do not leave output only in the chat — it must be saved as a file in the repo. Confirm the file path when done.
+Write the plan to the project's plans directory (default convention: `context_briefs_and_plans/plan-[feature].md`). Do not leave output only in the chat — it must be saved as a file in the repo. Confirm the file path when done.
 
 **Plan format:**
 - Numbered steps
 - Risk assessment table at the end (step, risk level, reason)
 - Implementation order with dependency notes (which steps must be sequential, which can be parallel)
-- Steps clearly separated so each can be handed to a separate worker chat
-- Branch instructions: workers create `feature/[name]` from `main`
+- Steps clearly separated so each can be handed to a separate worker
+- Branch instructions: workers create `feature/[name]` from the main branch
 - Commit convention: `Co-Authored-By: Claude <noreply@anthropic.com>` trailer on every commit
 
 **Rules:**
